@@ -10,19 +10,16 @@
 
 <h1>Login in the Blog</h1>
 
-<form method="post" th:object="${loginForm}">
-    <div><label for="username">Username:</label></div>
-    <input id="username" type="text" name="username" th:value="*{username}" />
-    <span class="formError" th:if="${#fields.hasErrors('username')}"
-          th:errors="*{username}">Invalid username</span>
-
-    <div><label for="password" th:value="*{username}">Password:</label></div>
-    <input id="password" type="password" name="password" th:value="*{password}" />
-    <span class="formError" th:if="${#fields.hasErrors('password')}"
-          th:errors="*{password}">Invalid password</span>
-
-    <div><input type="submit" value="Login"/>
-        <a href="register.html" th:href="@{/users/register}">[Go to Register]</a></div>
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/users/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
 </form>
 
 <footer th:replace="layout :: site-footer" />
