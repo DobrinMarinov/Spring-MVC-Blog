@@ -1,5 +1,5 @@
 body>header {
-    background: #eee;
+    background: #008080;
     padding: 5px;
 }
 
@@ -8,18 +8,21 @@ body>header>a>img, body>header a  {
     vertical-align: middle;
     padding: 0px 5px;
     font-size: 1.2em;
+    color: white;
 }
 
 body>footer {
-    background: #eee;
+    background: #008080;
     padding: 5px;
-    margin: 10px 0;
-    text-align: center;
-}
+    margin: 30px 0;
+    text-align: right;
+    color: white;
+   }
 
 #logged-in-info {
     float: right;
     margin-top: 18px;
+    color: white;
 }
 
 #logged-in-info form {
@@ -30,12 +33,13 @@ body>footer {
 
 body>aside {
     float: right;
-    width: 200px;
-    background: #CCC;
+    width: 250px;
+    background: #4B0082;
     padding: 15px;
     margin-left: 20px;
     margin-top: 10px;
-}
+    color: lightskyblue;
+    }
 
 body>aside h2 {
     margin: 5px 0px 15px 0px;
@@ -45,6 +49,7 @@ body>aside a {
     display: block;
     margin: 5px 0px;
     text-decoration: none;
+    color: white;
 }
 
 body>main:after {
