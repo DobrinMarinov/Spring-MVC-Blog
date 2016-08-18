@@ -1003,7 +1003,7 @@
       <workItem from="1471376274210" duration="4555000" />
       <workItem from="1471438035323" duration="13448000" />
       <workItem from="1471550965977" duration="3494000" />
-      <workItem from="1471555428736" duration="398000" />
+      <workItem from="1471555428736" duration="440000" />
     </task>
     <task id="LOCAL-00001" summary="additional files &amp; folders">
       <created>1470564311758</created>
@@ -1061,11 +1061,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471468518426</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Users page added">
+      <created>1471555860093</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1471555860093</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79051000" />
+    <option name="totallyTimeSpent" value="79093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
