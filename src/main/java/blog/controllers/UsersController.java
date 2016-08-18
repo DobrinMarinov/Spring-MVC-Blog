@@ -41,14 +41,10 @@ public class UsersController {
     public String view(@PathVariable("id") Long id, Model model) {
         User user = userService.findById(id);
 
-        Set<Post> allPosts = user.getPosts();
+        Set<Post> allUserPosts = user.getPosts();
 
-        if (user == null) {
-            notificationService.addErrorMessage("Cannot find user: " + id);
-            return "redirect:/";
-        }
+        model.addAttribute("allUserPosts", allUserPosts);
 
-        model.addAttribute("user", allPosts);
         return "posts/allUserPosts";
     }
 }

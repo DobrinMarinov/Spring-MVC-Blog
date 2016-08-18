@@ -13,7 +13,7 @@
 <main id="users">
 
     <aside>
-        <h2>Choose one to read his/her posts</h2>
+        <h2>Click on to read all user's posts</h2>
         <a href="#" th:each="p : ${allUsers}" th:text="${p.username}"
            th:href="@{/users/view/{id}/(id=${p.id})}">user posts</a>
     </aside>
