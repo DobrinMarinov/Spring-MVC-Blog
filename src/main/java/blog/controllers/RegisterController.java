@@ -1,6 +1,7 @@
 package blog.controllers;
 
 import blog.forms.LoginForm;
+import blog.forms.RegisterForm;
 import blog.services.NotificationService;
 import blog.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,15 +27,20 @@ public class RegisterController {
     }
 
     @RequestMapping(value = "/users/register", method = RequestMethod.POST)
-    public String loginPage(@Valid LoginForm loginForm, BindingResult bindingResult) {
+    public String register(@Valid RegisterForm registerForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             notifyService.addErrorMessage("Please fill the form correctly!");
             return "users/register";
         }
+        String fullName=registerForm.getFullName();
+        String password = registerForm.getPassword();
+        String username = registerForm.getUsername();
+        System.out.println( fullName+" "+username);
+
+        userService.register(username, password, fullName);
 
 
-
-        notifyService.addInfoMessage("Login successful");
+        notifyService.addInfoMessage("Registration successful");
         return "redirect:/";
     }
 }

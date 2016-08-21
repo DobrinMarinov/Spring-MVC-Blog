@@ -53,7 +53,11 @@ public class UserServiceJpaImpl implements UserService {
 
     @Override
     public User register(String username, String password, String fullName) {
-        throw new UnsupportedOperationException("Operation not implemented");
+        User user = new User();
+        user.setUsername(username);
+        user.setPasswordHash(password);
+        user.setFullName(fullName);
+        return this.userRepo.save(user);
     }
 
     @Override

@@ -11,6 +11,19 @@ public class RegisterForm {
     @Size(min=1, max=50)
     private String password;
 
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    @NotNull
+    @Size(min=1, max=50)
+    private String fullName;
+
     public String getUsername() {
         return username;
     }
