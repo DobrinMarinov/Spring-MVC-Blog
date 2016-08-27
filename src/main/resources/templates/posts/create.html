@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Register</title>
+</head>
+
+<body>
+<header th:replace="layout :: site-header" />
+
+<h1>Write a post</h1>
+
+
+<form th:action="@{/posts/create}" method="post">
+    <div><label> Post Title: <input type="text" name="postTitle"/> </label></div>
+    <div><label> Post Content: <input type="text" name="postContent"/> </label></div>
+
+    <button><input type="submitPost" value="Submit Post"/></button>
+
+
+</form>
+
+<footer th:replace="layout :: site-footer" />
+</body>
+
+</html>

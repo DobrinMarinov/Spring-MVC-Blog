@@ -12,11 +12,17 @@
 
 <main id="users">
 
-    <aside>
-        <h2>Click on to read all user's posts</h2>
-        <a href="#" th:each="p : ${allUsers}" th:text="${p.username}"
+
+    <h2>Click on to read all user's posts</h2>
+
+
+        <menu>
+
+         <a href="#" th:each="p : ${allUsers}" th:text="${p.username}"
            th:href="@{/users/view/{id}/(id=${p.id})}">user posts</a>
-    </aside>
+
+
+        </menu>
 
 </main>
 
@@ -24,3 +30,4 @@
 </body>
 
 </html>
+
