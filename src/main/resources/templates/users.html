@@ -18,7 +18,7 @@
 
         <menu>
 
-         <a href="#" th:each="p : ${allUsers}" th:text="${p.username}"
+        <a id="user" href="#" th:each="p : ${allUsers}" th:utext="${p.username}"
            th:href="@{/users/view/{id}/(id=${p.id})}">user posts</a>
 
 

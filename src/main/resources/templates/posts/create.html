@@ -12,10 +12,10 @@
 
 
 <form th:action="@{/posts/create}" method="post">
-    <div><label> Post Title: <input type="text" name="postTitle"/> </label></div>
-    <div><label> Post Content: <input type="text" name="postContent"/> </label></div>
+    <p><div><label> Post Title: <input type="text" name="postTitle"/> </label></div></p>
+    <p><div><label> Post Content: <input id="postContent" type="text" name="postContent"/> </label></div></p>
 
-    <button><input type="submitPost" value="Submit Post"/></button>
+    <p><input type="submit" value="Submit Post"/></p>
 
 
 </form>

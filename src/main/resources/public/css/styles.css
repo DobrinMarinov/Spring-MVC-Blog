@@ -81,4 +81,49 @@ ul#messages li.error {
     font-style: italic;
 }
 
+#postContent {
+    position: absolute;
+    width: 98%;
+    color: darkblue;
+    display: block;
+    height: 60px;
+    background: palegreen;
+    vertical-align: 500px;
+}
+
+#regUsername {
+    background: rgb(255, 255, 189);
+}
+
+#regFullname {
+    background-color: lightblue;
+}
+
+#regPassword {
+    background-color: lightgrey;
+}
+
+#loginUsername {
+    background: lightcyan;
+}
+
+#loginPass {
+    background: lightgray;
+}
+
+#users {
+    color: teal;
+}
+
+#loginMessage {
+    color: indianred;
+}
+
+#user {
+    float: left;
+    clear: left;
+    height: 30px;
+}
+
+
 

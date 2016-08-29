@@ -19,7 +19,7 @@
             <span th:text="${#dates.format(p.date, 'dd-MMM-yyyy')}">22-May-2016</span>
             <span th:if="${p.author}" th:remove="tag">
                     <i>by</i> <span th:text="${p.author.fullName != null ?
-                        p.author.fullName : p.author.username}">Dobrin Marinov</span>
+                        p.author.fullName : p.author.username}">someone</span>
                 </span>
         </div>
         <p class="content" th:utext="${p.body}">Post content</p>

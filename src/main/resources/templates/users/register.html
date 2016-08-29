@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+
 <head th:replace="layout :: site-head">
     <title>Register</title>
 </head>
@@ -12,11 +13,11 @@
 
 
 <form th:action="@{/users/register}" method="post">
-    <div><label> Username: <input type="text" name="username"/> </label></div>
-    <div><label> Full name: <input type="text" name="fullName"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><label> Confirm Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Submit"/></div>
+    <p><div><label> Username: <input id="regUsername" type="text" name="username"/> </label></div></p>
+    <p><div><label> Full name: <input id="regFullname" type="text" name="fullName"/> </label></div></p>
+    <p><div><label> Password: <input id="regPassword" type="password" name="password"/> </label></div></p>
+
+    <p><div><input type="submit" value="Register"/></div></p>
 
 
 </form>
