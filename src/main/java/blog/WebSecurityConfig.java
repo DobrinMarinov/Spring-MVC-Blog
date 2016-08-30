@@ -12,25 +12,39 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
-@ComponentScan(value = "org.webapp")
+@ComponentScan
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+//    @Autowired
+//    DataSource dataSource;
+
+//    @Autowired
+//    public void configureAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.jdbcAuthentication().dataSource(dataSource)
+//                .usersByUsernameQuery("username");
+//    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
+                http.authorizeRequests()
                 .antMatchers("/", "/home", "/css/**", "/img/**", "/js/**", "/users/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/users/login")
+//                .usernameParameter("username").passwordParameter("password")
+//                .and()
+//                .logout().logoutSuccessUrl("/login?logout")
+//                .and()
+//                .csrf();
+
                 .permitAll()
                 .and()
                 .logout()
                 .permitAll();
     }
 
-//    @Autowired
-//    private DataSource dataSource;
+
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

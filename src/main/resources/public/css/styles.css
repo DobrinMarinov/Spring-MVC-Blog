@@ -83,12 +83,13 @@ ul#messages li.error {
 
 #postContent {
     position: absolute;
-    width: 98%;
+    width: 88%;
     color: darkblue;
-    display: block;
-    height: 60px;
+    display: inline-block;
+    /*height: 60px;*/
     background: palegreen;
-    vertical-align: 500px;
+    /*vertical-align: 500px;*/
+    margin-left: 5px;
 }
 
 #regUsername {
@@ -123,6 +124,10 @@ ul#messages li.error {
     float: left;
     clear: left;
     height: 30px;
+}
+
+#submitPost {
+
 }
 
 
