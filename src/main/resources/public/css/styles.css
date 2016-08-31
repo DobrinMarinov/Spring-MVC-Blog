@@ -81,7 +81,7 @@ ul#messages li.error {
     font-style: italic;
 }
 
-#postContent {
+#postText {
     position: absolute;
     width: 88%;
     color: darkblue;

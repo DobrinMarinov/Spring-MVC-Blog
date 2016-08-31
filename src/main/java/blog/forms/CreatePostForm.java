@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class CreatePostForm {
-    @Size(min = 2, max = 50, message = "Username size should be in the range [2...50]")
+    @Size(min = 2, max = 300, message = "Username size should be in the range [2...50]")
     private String postTitle;
 
     @NotNull

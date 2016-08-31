@@ -1,7 +1,13 @@
 package blog.models;
 
+import org.hibernate.annotations.Type;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,13 +21,27 @@ public class User {
     private String username;
 
     @Column(length = 60)
-    private String passwordHash;
+    private String password;
 
     @Column(length = 100)
     private String fullName;
 
+    @Column
+    @Type(type = "numeric_boolean")
+    private Boolean enabled;
+
     @OneToMany(mappedBy = "author")
     private Set<Post> posts = new HashSet<Post>();
+
+    public User(String user, String password, List<GrantedAuthority> authorities) {
+        username=user;
+        this.password=password;
+    }
+
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public Long getId() {
         return id;
@@ -35,16 +55,21 @@ public class User {
         return username;
     }
 
+
+    public Boolean isEnabled() {
+        return false;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFullName() {
@@ -82,7 +107,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", passwordHash='" + passwordHash + '\'' +
+                ", passwordHash='" + password + '\'' +
                 ", fullName='" + fullName + '\'' +
                 '}';
     }

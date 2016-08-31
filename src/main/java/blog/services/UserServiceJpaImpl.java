@@ -4,6 +4,7 @@ import blog.models.User;
 import blog.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +24,12 @@ public class UserServiceJpaImpl implements UserService {
     @Override
     public User findById(Long id) {
         return this.userRepo.findOne(id);
+    }
+
+    @Override
+    public User findByUsername(String username) {
+
+        return this.userRepo.findByUsername(username);
     }
 
     @Override
@@ -55,8 +62,9 @@ public class UserServiceJpaImpl implements UserService {
     public User register(String username, String password, String fullName) {
         User user = new User();
         user.setUsername(username);
-        user.setPasswordHash(password);
+        user.setPassword(password);
         user.setFullName(fullName);
+        user.setEnabled(true);
         return this.userRepo.save(user);
     }
 

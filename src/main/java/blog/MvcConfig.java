@@ -16,15 +16,15 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/users/login").setViewName("login");
     }
 
-//    @Bean(name = "dataSource")
-//    public DriverManagerDataSource dataSource() {
-//        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-//        driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/blog_db");
-//        driverManagerDataSource.setUsername("root");
-//        driverManagerDataSource.setPassword("root");
-//        return driverManagerDataSource;
-//    }
+    @Bean(name = "dataSource")
+    public DriverManagerDataSource dataSource() {
+        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
+        driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        driverManagerDataSource.setUrl("jdbc:mysql://localhost/blog_db?characterEncoding=utf8");
+        driverManagerDataSource.setUsername("root");
+       // driverManagerDataSource.setPassword("");
+        return driverManagerDataSource;
+    }
 //
 //    //perhaps need a change in Prefix and Suffix:
 //    @Bean

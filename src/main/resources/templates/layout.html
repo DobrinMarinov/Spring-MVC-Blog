@@ -23,12 +23,13 @@
         <a href="posts/create.html" th:href="@{/posts/create}">Create Post</a>
         <a href="users/index.html" th:href="@{/users}">Users</a>
 
-        <div id="logged-in-info">
-            <span>Hello, <b>(user)</b></span>
-            <form method="post" th:action="@{/users/login?logout}">
+        <div id="logged-in-info" th:if="${#authorization.expression('isAuthenticated()')}">
+            <span>Hello, <b>(<span th:text="${#authentication.name}"> username </span> )</b></span>
+            <form method="post" th:action="@{/logout}">
                 <input type="hidden" name="logout" value="logout"/>
                 <input type="submit" value="Logout"/>
             </form>
+
         </div>
     </header>
 
